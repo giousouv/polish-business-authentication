@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Login and Register Auth pages</title>
+  </head>
+  <body
+    class="min-h-screen bg-gray-100 flex items-center justify-center font-sans overflow-x-hidden"
+  >
+    <!-- Language Selector -->
+    <div class="absolute top-4 right-4 flex items-center gap-0.5">
+      <i class="fa-solid fa-globe text-gray-800"></i>
+      <select
+        class="select select-ghost select-sm text-black bg-transparent focus:bg-transparent focus-within:text-black max-w-44 focus:outline-0 focus:ring-0"
+        id="language-select"
+        aria-label="Select Language"
+      >
+        <option selected class="text-black bg-transparent">Polish (PL)</option>
+        <option class="text-black">English (EN)</option>
+      </select>
+    </div>
+
+    <div
+      class="relative bg-white shadow-xl rounded-2xl flex w-full max-w-4xl overflow-hidden transition-all duration-500"
+    >
+      <!-- Left Panel -->
+      <div
+        class="hidden md:flex w-1/2 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 items-center justify-center p-10"
+      >
+        <div class="text-center">
+          <h1
+            class="text-3xl font-bold text-gray-800 mb-2"
+            data-i18n="welcomeBack"
+          >
+            Welcome Back 👋
+          </h1>
+          <p class="text-gray-600" data-i18n="accessDashboard">
+            Access your dashboard by logging in or create a new account.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Panel (Tabs + Forms) -->
+      <div class="w-full md:w-1/2 p-8 relative overflow-hidden">
+        <!-- Tabs -->
+        <div
+          role="tablist"
+          class="tabs tabs-box justify-center mb-6 z-10 relative bg-transparent"
+        >
+          <button
+            id="tab-login"
+            onclick="showTab('login')"
+            class="tab text-white bg-indigo-600 text-xl uppercase font-semibold border border-0.1 border-gray-300 border-r-0 rounded-l-md"
+            data-i18n="login"
+          >
+            Login
+          </button>
+          <button
+            id="tab-register"
+            onclick="showTab('register')"
+            class="tab text-black text-xl uppercase font-semibold border border-gray-300 border-0.1 border-l-0 rounded-r-md"
+            data-i18n="register"
+          >
+            Register
+          </button>
+        </div>
+
+        <!-- Forms Container -->
+        <div class="relative w-full h-[300px]">
+          <!-- Login Form -->
+          <form
+            id="login"
+            class="absolute top-0 left-0 w-full transition-all duration-500 transform -translate-x-0 opacity-100 z-20"
+          >
+            <div class="space-y-4">
+              <div>
+                <div class="flex gap-1 items-center mb-1">
+                  <i class="fa-solid fa-envelope text-gray-600"></i>
+                  <label
+                    class="block text-sm font-medium text-gray-600 mb-1"
+                    data-i18n="emailAddress"
+                    >Email</label
+                  >
+                </div>
+                <input
+                  type="email"
+                  placeholder="you@example.com"
+                  data-i18n-placeholder="emailAddress"
+                  class="input input-bordered w-full bg-gray-100 text-black placeholder:text-gray-600"
+                />
+              </div>
+              <div>
+                <div class="flex gap-1 items-center mb-1">
+                  <i class="fa-solid fa-lock text-gray-600"></i>
+                  <label
+                    class="block text-sm font-medium text-gray-600 mb-1"
+                    data-i18n="password"
+                    >Password</label
+                  >
+                </div>
+                <input
+                  type="password"
+                  placeholder="••••••••"
+                  data-i18n-placeholder="password"
+                  class="input input-bordered w-full bg-gray-100 text-black placeholder:text-gray-600"
+                />
+              </div>
+              <div class="flex items-center justify-between text-sm">
+                <label class="label cursor-pointer">
+                  <input
+                    type="checkbox"
+                    class="checkbox checkbox-sm outline checked:bg-indigo-500"
+                  />
+                  <span class="ml-2 text-gray-600" data-i18n="rememberMe"
+                    >Remember me</span
+                  >
+                </label>
+                <a
+                  href="#"
+                  class="text-indigo-500 hover:underline"
+                  data-i18n="forgotPassword"
+                  >Forgot password?</a
+                >
+              </div>
+              <button class="btn btn-primary w-full">Login</button>
+            </div>
+
+            <p class="mt-6 text-center text-sm text-gray-600">
+              <span data-i18n="dontHaveAccount"> Don’t have an account? </span>
+              <a
+                href="#"
+                class="text-indigo-600 font-medium hover:underline"
+                data-i18n="signUp"
+                onclick="showTab('register')"
+                >Sign up</a
+              >
+            </p>
+          </form>
+
+          <!-- Register Form -->
+          <form
+            id="register"
+            class="absolute top-0 left-0 w-full transition-all duration-500 transform translate-x-full opacity-0 z-10"
+          >
+            <div class="space-y-4">
+              <div>
+                <div class="flex gap-1 items-center mb-1">
+                  <i class="fa-solid fa-user text-gray-600"></i>
+                  <label
+                    class="block text-sm font-medium text-gray-600 mb-1"
+                    data-i18n="fullName"
+                    >Full Name</label
+                  >
+                </div>
+                <input
+                  type="text"
+                  placeholder="John Doe"
+                  class="input input-bordered w-full bg-gray-100 text-black placeholder:text-gray-600"
+                />
+              </div>
+              <div>
+                <div class="flex gap-1 items-center mb-1">
+                  <i class="fa-solid fa-envelope text-gray-600"></i>
+                  <label
+                    class="block text-sm font-medium text-gray-600 mb-1"
+                    data-i18n="emailAddress"
+                    >Email</label
+                  >
+                </div>
+                <input
+                  type="email"
+                  placeholder="you@example.com"
+                  class="input input-bordered w-full bg-gray-100 text-black placeholder:text-gray-600"
+                />
+              </div>
+              <div>
+                <div class="flex gap-1 items-center mb-1">
+                  <i class="fa-solid fa-lock text-gray-600"></i>
+                  <label
+                    class="block text-sm font-medium text-gray-600 mb-1"
+                    data-i18n="password"
+                    >Password</label
+                  >
+                </div>
+                <input
+                  type="password"
+                  placeholder="••••••••"
+                  class="input input-bordered w-full bg-gray-100 text-black placeholder:text-gray-600"
+                />
+              </div>
+              <button
+                class="btn btn-primary w-full text-white"
+                data-i18n="register"
+              >
+                Register
+              </button>
+            </div>
+            <p class="mt-2 text-center text-sm text-gray-600">
+              <span data-i18n="alreadyHaveAccount">
+                Already have an account?
+              </span>
+              <a
+                href="#"
+                class="text-indigo-600 font-medium hover:underline"
+                data-i18n="signIn"
+                onclick="showTab('login')"
+                >Login</a
+              >
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showTab(tab) {
+        const loginForm = document.getElementById("login");
+        const registerForm = document.getElementById("register");
+        const tabLogin = document.getElementById("tab-login");
+        const tabRegister = document.getElementById("tab-register");
+
+        if (tab === "login") {
+          loginForm.classList.remove("-translate-x-full", "opacity-0", "z-10");
+          loginForm.classList.add("translate-x-0", "opacity-100", "z-20");
+          registerForm.classList.remove("translate-x-0", "opacity-100", "z-20");
+          registerForm.classList.add("translate-x-full", "opacity-0", "z-10");
+
+          // Styling active login tab
+          tabLogin.classList.add("bg-indigo-500", "text-white");
+          tabLogin.classList.remove(
+            "bg-white",
+            "text-black",
+            "border",
+            "border-gray-300"
+          );
+
+          tabRegister.classList.add(
+            "bg-white",
+            "text-black",
+            "border",
+            "border-gray-300"
+          );
+          tabRegister.classList.remove("bg-indigo-500", "text-white");
+        } else {
+          loginForm.classList.remove("translate-x-0", "opacity-100", "z-20");
+          loginForm.classList.add("-translate-x-full", "opacity-0", "z-10");
+          registerForm.classList.remove(
+            "translate-x-full",
+            "opacity-0",
+            "z-10"
+          );
+          registerForm.classList.add("translate-x-0", "opacity-100", "z-20");
+
+          // Styling active register tab
+          tabRegister.classList.add("bg-indigo-500", "text-white");
+          tabRegister.classList.remove(
+            "bg-white",
+            "text-black",
+            "border",
+            "border-gray-300"
+          );
+
+          tabLogin.classList.add(
+            "bg-white",
+            "text-black",
+            "border",
+            "border-gray-300"
+          );
+          tabLogin.classList.remove("bg-indigo-500", "text-white");
+        }
+      }
+    </script>
+    <script type="module" src="../ts/main.ts"></script>
+  </body>
+</html>

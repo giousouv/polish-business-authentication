@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Select Design</title>
+  </head>
+
+  <body
+    class="bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100 min-h-screen flex items-center justify-center"
+  >
+    <div class="absolute top-4 right-4 flex items-center gap-0.5">
+      <i class="fa-solid fa-globe text-gray-800"></i>
+      <select
+        class="select select-ghost select-sm text-black bg-transparent focus:bg-transparent focus-within:text-black max-w-44 focus:outline-0 focus:ring-0"
+        id="language-select"
+        aria-label="Select Language"
+      >
+        <option selected class="text-black bg-transparent">Polish (PL)</option>
+        <option class="text-black">English (EN)</option>
+      </select>
+    </div>
+    <div
+      class="w-full max-w-3xl p-8 bg-white rounded-2xl shadow-xl flex flex-col items-center space-y-6"
+    >
+      <h1
+        class="text-3xl font-bold text-gray-800 mb-4"
+        data-i18n="chooseDesign"
+      >
+        Choose a Design
+      </h1>
+
+      <a
+        class="w-full px-6 py-3 text-center text-lg font-semibold text-white bg-indigo-500 rounded-xl hover:bg-indigo-600 transition-all duration-200 shadow-md hover:shadow-lg"
+        href="./design-1-login/index.html"
+        data-i18n="loginDesign1"
+      >
+        Login Design 1
+      </a>
+
+      <a
+        class="w-full px-6 py-3 text-center text-lg font-semibold text-white bg-purple-500 rounded-xl hover:bg-purple-600 transition-all duration-200 shadow-md hover:shadow-lg"
+        href="./design-2-login-register/index.html"
+        data-i18n="loginRegisterDesign2"
+      >
+        Login Register Design 2
+      </a>
+
+      <a
+        class="w-full px-6 py-3 text-center text-lg font-semibold text-white bg-pink-500 rounded-xl hover:bg-pink-600 transition-all duration-200 shadow-md hover:shadow-lg"
+        href="./design-3-landing-login-modal/index.html"
+        data-i18n="landingLoginModalDesign3"
+      >
+        Landing Login Modal Design 3
+      </a>
+    </div>
+
+    <script type="module" src="./ts/main.ts"></script>
+  </body>
+</html>

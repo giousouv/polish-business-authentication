@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Landing Page and Login Modal</title>
+    <style>
+      body {
+        background: linear-gradient(270deg, #6366f1, #8b5cf6, #ec4899);
+        background-size: 600% 600%;
+        animation: gradientAnimation 15s ease infinite;
+      }
+
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-white"
+  >
+    <!-- Language Selector -->
+    <div class="absolute top-4 right-4 flex items-center gap-0.5">
+      <i class="fa-solid fa-globe text-gray-800"></i>
+      <select
+        class="select select-ghost select-sm text-black bg-transparent focus:bg-transparent focus-within:text-black max-w-44 focus:outline-0 focus:ring-0"
+        id="language-select"
+        aria-label="Select Language"
+      >
+        <option selected class="text-black bg-transparent">Polish (PL)</option>
+        <option class="text-black">English (EN)</option>
+      </select>
+    </div>
+    <!-- Landing content -->
+    <section
+      class="flex flex-col items-center justify-center min-h-screen text-white text-center p-6"
+    >
+      <h1 class="text-5xl md:text-6xl font-bold mb-4 animate-fade-slide inline">
+        <span data-i18n="welcomeTitle"> Welcome to </span>
+        <span
+          class="text-yellow-300 text-5xl md:text-6xl font-bold"
+          data-i18n="dusatuGroup"
+          >DUSATU GROUP</span
+        >
+      </h1>
+
+      <p
+        class="text-xl md:text-2xl max-w-2xl animate-fade-slide delay-200"
+        data-i18n="welcomeSubtitle"
+      >
+        Experience a modern and professional platform built just for you.
+      </p>
+
+      <!-- Login Button -->
+      <div class="mt-8">
+        <button
+          class="btn btn-lg bg-white text-indigo-700 uppercase border-0 hover:bg-gray-200 font-semibold px-8 py-3 rounded-lg shadow-lg transition duration-300"
+          onclick="document.getElementById('login_modal').showModal()"
+          data-i18n="login"
+        >
+          Login
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="absolute bottom-4 text-sm text-white/80">
+      © Dusatu Group 2025
+    </footer>
+
+    <!-- Login Modal using DaisyUI -->
+    <dialog id="login_modal" class="modal">
+      <form method="dialog" class="modal-box bg-white text-gray-800">
+        <h3 class="font-bold text-2xl text-center mb-6" data-i18n="login">
+          Login
+        </h3>
+
+        <div class="form-control mb-4">
+          <div class="flex gap-1 items-center mb-1">
+            <i class="fa-solid fa-envelope text-gray-600"></i>
+            <label class="label">
+              <span class="label-text" data-i18n="emailAddress"
+                >Email Address</span
+              >
+            </label>
+          </div>
+          <input
+            type="email"
+            placeholder="you@example.com"
+            class="input input-bordered w-full bg-transparent placeholder:text-gray-400 text-black focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            required
+          />
+        </div>
+
+        <div class="form-control mb-4">
+          <div class="flex gap-1 items-center mb-1">
+            <i class="fa-solid fa-lock text-gray-600"></i>
+            <label class="label">
+              <span class="label-text" data-i18n="password">Password</span>
+            </label>
+          </div>
+          <input
+            type="password"
+            placeholder="••••••••"
+            class="input input-bordered w-full bg-transparent placeholder:text-gray-400 text-black focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            required
+          />
+        </div>
+
+        <div class="flex justify-between items-center mb-6">
+          <label class="label cursor-pointer gap-2">
+            <input
+              type="checkbox"
+              class="checkbox checkbox-sm checked:bg-pink-500"
+            />
+            <span class="label-text text-sm" data-i18n="rememberMe"
+              >Remember me</span
+            >
+          </label>
+          <a
+            href="#"
+            class="text-sm text-pink-500 hover:underline"
+            data-i18n="forgotPassword"
+            >Forgot password?</a
+          >
+        </div>
+
+        <button class="btn w-full mb-2 bg-pink-500 border-0" data-i18n="login">
+          Login
+        </button>
+        <p class="mt-6 text-center text-sm text-gray-600">
+          <span data-i18n="dontHaveAccount"> Don’t have an account? </span>
+          <a
+            href="#"
+            class="text-pink-500 font-medium hover:underline"
+            data-i18n="signUp"
+            >Sign up</a
+          >
+        </p>
+
+        <!-- Close Button -->
+        <div class="modal-action">
+          <button
+            class="btn btn-outline btn-primary"
+            data-i18n="close"
+            onclick="document.getElementById('login_modal').close()"
+          >
+            Close
+          </button>
+        </div>
+      </form>
+
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+
+    <script type="module" src="../ts/main.ts"></script>
+  </body>
+</html>

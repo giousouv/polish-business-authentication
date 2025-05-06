@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Login page</title>
+  </head>
+  <body
+    class="min-h-screen bg-gray-50 flex items-center justify-center font-sans"
+  >
+    <!-- Language Selector -->
+    <div class="absolute top-4 right-4 flex items-center gap-0.5">
+      <i class="fa-solid fa-globe text-gray-800"></i>
+      <select
+        class="select select-ghost select-sm text-black bg-transparent focus:bg-transparent focus-within:text-black max-w-44 focus:outline-0 focus:ring-0"
+        id="language-select"
+        aria-label="Select Language"
+      >
+        <option selected class="text-black bg-transparent">Polish (PL)</option>
+        <option class="text-black">English (EN)</option>
+      </select>
+    </div>
+    <div class="w-full max-w-md p-8 bg-white shadow-lg rounded-2xl">
+      <h2
+        class="text-2xl font-bold text-gray-800 mb-6 text-center"
+        data-i18n="signInToYourAccount"
+      >
+        Sign in to your account
+      </h2>
+
+      <form class="space-y-4">
+        <div>
+          <div class="flex gap-1 items-center mb-1">
+            <i class="fa-solid fa-envelope text-black"></i>
+
+            <label
+              class="block text-sm font-medium text-gray-600 mb-1"
+              data-i18n="emailAddress"
+              >Email address</label
+            >
+          </div>
+          <input
+            type="email"
+            placeholder="you@example.com"
+            data-i18n-placeholder="emailAddress"
+            class="input input-bordered w-full bg-gray-100 placeholder:text-gray-400 text-black focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            required
+          />
+        </div>
+
+        <div>
+          <div class="flex gap-1 items-center mb-1">
+            <i class="fa-solid fa-lock text-black"></i>
+            <label
+              class="block text-sm font-medium text-gray-600 mb-1"
+              data-i18n="password"
+              >Password</label
+            >
+          </div>
+          <input
+            type="password"
+            placeholder="••••••••"
+            data-i18n-placeholder="password"
+            class="input input-bordered w-full bg-gray-100 placeholder:text-gray-400 text-black focus:outline-none focus:ring-2 focus:ring-indigo-400"
+            required
+          />
+        </div>
+
+        <div class="flex items-center justify-between text-sm">
+          <label class="label cursor-pointer">
+            <input
+              type="checkbox"
+              class="checkbox checkbox-sm outline checked:bg-black"
+            />
+            <span class="ml-2 text-gray-600" data-i18n="rememberMe"
+              >Remember me</span
+            >
+          </label>
+          <a
+            href="#"
+            class="text-blue-600 hover:underline"
+            data-i18n="forgotPassword"
+            >Forgot password?</a
+          >
+        </div>
+
+        <button
+          class="btn btn-neutral w-full mt-2 shadow-0 hover:shadow-0"
+          data-i18n="signIn"
+          type="submit"
+        >
+          Sign In
+        </button>
+      </form>
+
+      <p class="mt-6 text-center text-sm text-gray-600">
+        <span data-i18n="dontHaveAccount"> Don’t have an account? </span>
+        <a
+          href="#"
+          class="text-blue-600 font-medium hover:underline"
+          data-i18n="signUp"
+          >Sign up</a
+        >
+      </p>
+    </div>
+
+    <script type="module" src="../ts/main.ts"></script>
+  </body>
+</html>
