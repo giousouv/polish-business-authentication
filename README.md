@@ -33,35 +33,39 @@ A collection of responsive, professionally designed authentication pages built w
 
 .
 ├── docs/
-│ └── contribution-notes.md
-│ └── design-notes.md
-│ └── setup-guide.md
+│   ├── contribution-notes.md
+│   ├── design-notes.md
+│   └── setup-guide.md
+│
 ├── public/
-│ └── design1.png
-│ └── design2a.png
-│ └── design2b.png
-│ └── design3a.png
-│ └── design3b.png
-│ └── vite.svg
+│   ├── design1.png
+│   ├── design2a.png
+│   ├── design2b.png
+│   ├── design3a.png
+│   ├── design3b.png
+│   └── vite.svg
+│
 ├── src/
-│ ├── design-1-login/
-│   └── index.html
-│ ├── design-2-login-register/
-│   └── index.html
-│ ├── design-3-landing-login-model/
-│   └── index.html
-│ ├── ts/
-│   └── i18n.ts
-│   └── main.ts
-│ ├── index.html
-│ ├── style.css
-│ ├── vite-env.d.ts
+│   ├── design-1-login/
+│   │   └── index.html
+│   ├── design-2-login-register/
+│   │   └── index.html
+│   ├── design-3-landing-login-model/
+│   │   └── index.html
+│   ├── ts/
+│   │   ├── i18n.ts
+│   │   └── main.ts
+│   ├── index.html
+│   ├── style.css
+│   ├── vite-env.d.ts
+│
 ├── .gitignore
 ├── package-lock.json
 ├── package.json
 ├── README.md
 ├── tsconfig.json
-├── vite.config.ts
+└── vite.config.ts
+
 
 ---
 
