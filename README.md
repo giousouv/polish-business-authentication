@@ -31,6 +31,7 @@ A collection of responsive, professionally designed authentication pages built w
 ---
 ## 📁 Folder Structure
 
+```bash
 .
 ├── docs/
 │   ├── contribution-notes.md
@@ -65,8 +66,7 @@ A collection of responsive, professionally designed authentication pages built w
 ├── README.md
 ├── tsconfig.json
 └── vite.config.ts
-
-
+```
 ---
 
 ## 🚀 Instructions to Run Locally
